@@ -18,6 +18,13 @@
 */
 
 // Includes
+#if defined(ARDUINO) && ARDUINO >= 100
+#include "Arduino.h"
+#else
+#include "WProgram.h"
+#include "WConstants.h"
+#endif
+
 #include "Obi.h"
 
 extern "C" {

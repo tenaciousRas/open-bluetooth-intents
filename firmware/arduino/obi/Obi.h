@@ -42,18 +42,20 @@
 #include <inttypes.h>
 #if defined(ARDUINO) && ARDUINO >= 100
 #include "Arduino.h"
-#include "/Applications/Arduino.app/Contents/Resources/Java/libraries/SoftwareSerial/SoftwareSerial.h"
+// this isn't working
+// #include <SoftwareSerial.h>
+// this is working
+#include "/Applications/Arduino-101.app/Contents/Resources/Java/libraries/SoftwareSerial/SoftwareSerial.h"
+
 #else
-#include "WProgram.h"
-#include "WConstants.h"
-#include "NewSoftSerial.h"
+#include <NewSoftSerial.h>
 #endif
 
-#ifndef AMARINO_RX
-#define AMARINO_RX 0
+#ifndef OBI_RX
+#define OBI_RX 0
 #endif
-#ifndef AMARINO_TX
-#define AMARINO_TX 1
+#ifndef OBI_TX
+#define OBI_TX 1
 #endif
 
 
