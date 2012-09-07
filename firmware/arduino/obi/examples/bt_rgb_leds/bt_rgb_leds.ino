@@ -14,6 +14,7 @@
 // This software is provided as-is.  No warranty or guarantee
 // is provided.  You assume all responsibility from its use.
 // #define DEBUG_MODE
+#include <SoftwareSerial.h> 
 #include <Obi.h>
 Obi obi;
 

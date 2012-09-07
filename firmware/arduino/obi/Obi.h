@@ -42,11 +42,7 @@
 #include <inttypes.h>
 #if defined(ARDUINO) && ARDUINO >= 100
 #include "Arduino.h"
-// this isn't working
-// #include <SoftwareSerial.h>
-// this is working
-#include "/Applications/Arduino-101.app/Contents/Resources/Java/libraries/SoftwareSerial/SoftwareSerial.h"
-
+#include <SoftwareSerial.h>
 #else
 #include <NewSoftSerial.h>
 #endif

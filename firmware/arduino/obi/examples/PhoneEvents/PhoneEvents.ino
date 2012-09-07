@@ -9,6 +9,7 @@
   Add first event 'Phone State' then 'Time Tick' in Amarino to use this sketch
 */
  
+#include <SoftwareSerial.h> 
 #include <Obi.h>
 
 #define IDLE 0

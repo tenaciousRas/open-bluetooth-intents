@@ -7,6 +7,7 @@
   author: Bonifaz Kaufmann - December 2009
 */
  
+#include <SoftwareSerial.h> 
 #include <Obi.h>
 
 // declare obi so that you can call functions with it

@@ -2,6 +2,7 @@
   Receives compass sensor events from your phone.
 */
  
+#include <SoftwareSerial.h> 
 #include <Obi.h>
 
 // obi obi();

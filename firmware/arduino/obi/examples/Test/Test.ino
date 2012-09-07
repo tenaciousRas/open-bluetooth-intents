@@ -4,6 +4,7 @@
   for one second.
 */
  
+#include <SoftwareSerial.h> 
 #include <Obi.h>
 
 Obi obi;

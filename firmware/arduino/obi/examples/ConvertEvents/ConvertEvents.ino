@@ -5,6 +5,7 @@
   functions to convert received data.
 */
  
+#include <SoftwareSerial.h> 
 #include <Obi.h>
 
 Obi obi;

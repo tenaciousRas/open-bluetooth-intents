@@ -3,6 +3,7 @@
   (needs SensorGraph and Amarino app installed and running on Android)
 */
  
+#include <SoftwareSerial.h> 
 #include <Obi.h>
 
 Obi obi;

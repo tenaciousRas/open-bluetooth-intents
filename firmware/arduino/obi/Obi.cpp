@@ -1,5 +1,5 @@
 /*
- O.h - Arduino Library for bluetooth communication
+ OBI - Arduino Library for bluetooth communication
  Copyright (c) 2012 Free Beachler.  All right reserved.
  
  This library is free software; you can redistribute it and/or
@@ -26,6 +26,7 @@
 #endif
 
 #include "Obi.h"
+#include <SoftwareSerial.h>
 
 extern "C" {
 #include <stdlib.h>
@@ -73,7 +74,7 @@ void Obi::init()
 
 
 // public methods
-Obi::Obi() : mySerial(0, 1, false)
+Obi::Obi() : mySerial(OBI_RX, OBI_TX, false)
 {
     // it is hard to use member function pointer together with normal function pointers.
     customErrorFunc = false;
@@ -82,10 +83,18 @@ Obi::Obi() : mySerial(0, 1, false)
 }
 
 // Constructur for use with HardwareSerial library
-Obi::Obi(H_voidFuncPtr err) : mySerial(0, 1, false)
+Obi::Obi(H_voidFuncPtr err) : mySerial(OBI_RX, OBI_TX, false)
 {
     customErrorFunc = true;
 	errorFunc = err;
+	init();
+}
+
+// Constructur for use with HardwareSerial library
+Obi::Obi(uint8_t rx_pin, uint8_t tx_pin) : mySerial(rx_pin, tx_pin, false)
+{
+    customErrorFunc = false;
+	errorFunc = 0;
 	init();
 }
 
