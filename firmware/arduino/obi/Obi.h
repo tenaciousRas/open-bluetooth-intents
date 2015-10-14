@@ -35,14 +35,14 @@
 #define Obi_h
 
 #define ByteBufferLength 128
-#define FunctionBufferLenght 75 // 48-122 (in ascii: 0 - z)
+#define FunctionBufferLength 75 // 48-122 (in ascii: 0 - z)
 #define FunctionBufferOffset 48  // offset to calc the position in the function buffer ('0' should be stored in intFunc[0])
 #define _OBI_VERSION 1 
 
 #include <inttypes.h>
 #if defined(ARDUINO) && ARDUINO >= 100
 #include "Arduino.h"
-#include <SoftwareSerial.h>
+#include "SoftwareSerial.h"
 #else
 #include <NewSoftSerial.h>
 #endif
@@ -79,7 +79,7 @@ private:
 	bool customErrorFunc;
 
 	typedef void (*H_voidFuncPtr)(uint8_t, uint8_t);
-	H_voidFuncPtr intFunc[FunctionBufferLenght];
+	H_voidFuncPtr intFunc[FunctionBufferLength];
 	H_voidFuncPtr errorFunc;
     SoftwareSerial mySerial;
 
@@ -96,6 +96,7 @@ public:
 	Obi(void);
     Obi(uint8_t, uint8_t);
 	
+    void begin(int);
 	void flush(void);
 	bool receive(void);
 	void registerFunction(void(*)(uint8_t, uint8_t),uint8_t);
@@ -133,6 +134,7 @@ public:
 		return _OBI_VERSION;} 
 };
 
+/*
 // Arduino 0012 workaround
 #undef int
 #undef char
@@ -141,5 +143,5 @@ public:
 #undef float
 #undef abs
 #undef round 
-
+*/
 #endif
